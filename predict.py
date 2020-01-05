@@ -33,11 +33,11 @@ def model_training(train,test,features,target):
 	lr.fit(train[features],train[target])
 	predicted=lr.predict(test[features])
 	error=mean_absolute_error(test[target],predicted)
-	diff=test[target]-predicted
-
-	return error
+    return error
 
 if __name__=='__main__':
 	train,test=data_preprocessing()
 	error=model_training(train,test,['last_5_avg','last_30_avg','last_365_avg'],'Close')
 	print('Mean absolute error:',error)
+
+	
