@@ -18,9 +18,9 @@ The columns of the dataset are:
 - Adj Close -- The daily closing price, adjusted retroactively to include any corporate actions.
 
 
-Eroor Metric: Mean Absolute Error (MAE)
+Error Metric: Mean Absolute Error (MAE)
 
-Iteration 1:
+### Iteration 1:
 
 Indicators used:
 
@@ -30,7 +30,14 @@ Indicators used:
 
 
 Algorithm used: Linear Regression
+
 Error: 16.1422
+
+### Iteration 2:
+
+
+
+
 
 
 

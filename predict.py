@@ -1,6 +1,7 @@
 import pandas as pd
 from datetime import datetime
-from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+
 from sklearn.metrics import mean_absolute_error
 
 def data_preprocessing():
@@ -29,15 +30,15 @@ def data_preprocessing():
 
 def model_training(train,test,features,target):
 	'''Trains the model, predicts the values for the test data and returns the accuracy'''
-	lr=LinearRegression()
-	lr.fit(train[features],train[target])
-	predicted=lr.predict(test[features])
+	rf=RandomForestRegressor()
+	rf.fit(train[features],train[target])
+	predicted=rf.predict(test[features])
 	error=mean_absolute_error(test[target],predicted)
-    return error
+	return error
+
 
 if __name__=='__main__':
 	train,test=data_preprocessing()
 	error=model_training(train,test,['last_5_avg','last_30_avg','last_365_avg'],'Close')
 	print('Mean absolute error:',error)
 
-	
